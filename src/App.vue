@@ -50,7 +50,9 @@
     </div>
   </div>
 </template>
-
+<script>
+import axios from 'axios'
+</script>
 <style lang="scss" scoped>
 #app{
   background: #f2f2f2;
