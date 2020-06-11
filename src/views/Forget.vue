@@ -50,7 +50,7 @@
                 <div class="layui-form-item">
                   <label for="L_email" class="layui-form-label">邮箱</label>
                   <div class="layui-input-inline">
-                    <input type="text" id="L_email" name="email" required lay-verify="required" autocomplete="off" class="layui-input">
+                    <input type="text" name="username" v-model="username" lay-verify="required" autocomplete="off" class="layui-input">
                   </div>
                 </div>
                 <div class="layui-form-item">
@@ -58,12 +58,12 @@
                   <div class="layui-input-inline">
                     <input type="text" id="L_vercode" name="vercode" required lay-verify="required" placeholder="请回答后面的问题" autocomplete="off" class="layui-input">
                   </div>
-                  <div class="layui-form-mid">
-                    <span style="color: #c00;">111</span>
-                  </div>
+                  <div class="layui-form-mid color-mid"
+                  @click="_getCode()"
+                  v-html="svg"></div>
                 </div>
                 <div class="layui-form-item">
-                  <button class="layui-btn" alert="1" lay-filter="*" lay-submit>提交</button>
+                  <button type="button" class="layui-btn" alert="1" @click="submit()">提交</button>
                 </div>
               </form>
             </div>
@@ -75,8 +75,36 @@
   </div>
 </template>
 <script>
+import { getCode, forget } from '@/api/login'
 export default {
-  name: 'forget'
+  name: 'forget',
+  data () {
+    return {
+      username: '',
+      password: '',
+      code: '',
+      svg: ''
+    }
+  },
+  mounted () {
+    this._getCode()
+  },
+  methods: {
+    _getCode () {
+      getCode().then((res) => {
+        console.log(res)
+        this.svg = res.msg
+      })
+    },
+    submit () {
+      forget({
+        username: this.username,
+        code: this.code
+      }).then((res) => {
+        console.log(res)
+      })
+    }
+  }
 }
 </script>
 <style lang="stylus" scoped>
