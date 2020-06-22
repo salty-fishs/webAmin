@@ -27,6 +27,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 @media (max-width: 768) {
+  // 最大宽度 即 <768
   .panel {
     height: auto !important;
   }
