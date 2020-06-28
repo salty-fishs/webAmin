@@ -30,16 +30,7 @@ export default {
           path: '/index/share',
           isNew: false
         },
-        {
-          name: '讨论',
-          path: '/index/discuss',
-          isNew: false
-        },
-        {
-          name: '建议',
-          path: '/index/advise',
-          isNew: false
-        },
+
    
       ],
       isLogin: this.$store.state.isLogin
@@ -67,9 +58,8 @@ export default {
     height: auto !important;
   }
   ul {
-    width: 100%;
     li {
-      width: 20%;
+      width: 33.3%;
     }
   }
 }
@@ -79,7 +69,6 @@ export default {
   width: 100%;
   line-height: 80px;
   background-color: #fff;
-  border-top: 1px solid #f8f8f8;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   bottom: 0;
   left: 0;
@@ -92,7 +81,6 @@ export default {
 ul {
   li {
     display: inline-block;
-    width: 20%;
     a {
       padding: 0 20px;
     }

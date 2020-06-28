@@ -21,23 +21,22 @@ export default {
     return {
       lists: [
         {
-          name: '提问',
+          name: '分享',
           path: '/index/ask',
           isNew: true
         },
         {
-          name: '分享',
+          name: '商城',
           path: '/index/share',
           isNew: false
         },
         {
-          name: '讨论',
-          path: '/index/discuss',
+          name: '购物车',
+          path: '/index/share',
           isNew: false
-        },
-        {
-          name: '建议',
-          path: '/index/advise',
+        },{
+          name: '我的',
+          path: '/index/share',
           isNew: false
         },
    

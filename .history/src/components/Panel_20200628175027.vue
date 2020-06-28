@@ -3,14 +3,23 @@
     <div class="layui-container">
       <ul class="layui-clear">
         <router-link tag="li" to="/" >
-          <a href="\" @click="toTop">首页</a>
+          <a href="\">首页</a>
         </router-link>
         <router-link v-for="(item,index) in lists" :key="'panel' + index" tag="li" :to="item.path">
-          <a href="\" @click="toTop">{{item.name}}</a>
-          <!-- <span class="layui-badge-dot" v-if="item.isNew"></span> -->
+          <a href="\">{{item.name}}</a>
+          <span class="layui-badge-dot" v-if="item.isNew"></span>
         </router-link>
+        <!-- 用户登录后显示 -->
+        <template v-if="isLogin">
+          <li class="layui-hide-xs"><span class="line"></span></li>
+          <li class="layui-hide-xs layui-col-sm"><a href="\">我发表的帖</a></li>
+          <li class="layui-hide-xs layui-col-sm"><a href="\">我收藏的帖</a></li>
+        </template>
       </ul>
-
+      <div class="right layui-hide-xs">
+        <span class="layui-icon layui-icon-search"></span>
+        <a href="" class="layui-btn">发表新帖</a>
+      </div>
     </div>
   </div>
 </template>
@@ -30,34 +39,12 @@ export default {
           path: '/index/share',
           isNew: false
         },
-        {
-          name: '讨论',
-          path: '/index/discuss',
-          isNew: false
-        },
-        {
-          name: '建议',
-          path: '/index/advise',
-          isNew: false
-        },
+
    
       ],
       isLogin: this.$store.state.isLogin
     }
-  },
-  methods: {
-    toTop() {
-      
-      let top = document.documentElement.scrollTop || document.body.scrollTop;
-      // 实现滚动效果 
-      const timeTop = setInterval(() => {
-        document.body.scrollTop = document.documentElement.scrollTop = top -= 50;
-        if (top <= 0) {
-          clearInterval(timeTop);
-        }
-      }, 10);
-    }
-  },
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -67,22 +54,19 @@ export default {
     height: auto !important;
   }
   ul {
-    width: 100%;
     li {
-      width: 20%;
+      width: 33.3%;
     }
   }
 }
 .panel{
-  position: fixed;
-  height: 80px;
-  width: 100%;
-  line-height: 80px;
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 15px;
+  border-radius: 2px;
   background-color: #fff;
-  border-top: 1px solid #f8f8f8;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  bottom: 0;
-  left: 0;
 }
 .layui-this{
   a {
@@ -92,7 +76,6 @@ export default {
 ul {
   li {
     display: inline-block;
-    width: 20%;
     a {
       padding: 0 20px;
     }

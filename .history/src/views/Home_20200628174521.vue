@@ -1,7 +1,7 @@
 <template>
-  <div class="index">
-    <router-view></router-view>
+  <div>
     <panel></panel>
+    <router-view></router-view>
   </div>
 </template>
 <script>

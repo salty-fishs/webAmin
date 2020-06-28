@@ -1,11 +1,11 @@
 <template>
   <div class="layui-col-md4">
-    <tips></tips>
-    <sign></sign>
-    <links></links>
-    <hot-list></hot-list>
-    <ads></ads>
-  </div>
+        <tips></tips>
+        <sign></sign>
+        <links></links>
+        <hot-list></hot-list>
+        <ads></ads>
+      </div>
 </template>
 <script>
 import Tips from '../../components/sidebar/Tips'

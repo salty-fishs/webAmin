@@ -21,7 +21,7 @@ export default {
     return {
       lists: [
         {
-          name: '提问',
+          name: '首页',
           path: '/index/ask',
           isNew: true
         },
@@ -31,13 +31,12 @@ export default {
           isNew: false
         },
         {
-          name: '讨论',
-          path: '/index/discuss',
+          name: '分享',
+          path: '/index/share',
           isNew: false
-        },
-        {
-          name: '建议',
-          path: '/index/advise',
+        },{
+          name: '分享',
+          path: '/index/share',
           isNew: false
         },
    

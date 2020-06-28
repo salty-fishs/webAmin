@@ -5,11 +5,11 @@
   </div>
 </template>
 <script>
-import Panel from '../components/Panel'
+// import Panel from '../components/Panel'
 export default {
   name: 'home',
   components: {
-    Panel
+    // Panel
   }
 }
 </script>

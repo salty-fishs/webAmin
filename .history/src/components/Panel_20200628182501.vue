@@ -31,13 +31,12 @@ export default {
           isNew: false
         },
         {
-          name: '讨论',
-          path: '/index/discuss',
+          name: '分享',
+          path: '/index/share',
           isNew: false
-        },
-        {
-          name: '建议',
-          path: '/index/advise',
+        },{
+          name: '分享',
+          path: '/index/share',
           isNew: false
         },
    
@@ -67,7 +66,6 @@ export default {
     height: auto !important;
   }
   ul {
-    width: 100%;
     li {
       width: 20%;
     }
@@ -92,7 +90,6 @@ export default {
 ul {
   li {
     display: inline-block;
-    width: 20%;
     a {
       padding: 0 20px;
     }

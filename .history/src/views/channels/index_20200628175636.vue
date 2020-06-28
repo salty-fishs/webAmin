@@ -1,10 +1,15 @@
 <template>
-  <div class="layui-col-md4">
-    <tips></tips>
-    <sign></sign>
-    <links></links>
-    <hot-list></hot-list>
-    <ads></ads>
+  <div class="layui-container">
+    <div class="layui-row layui-col-space15">
+
+      <div class="layui-col-md4">
+        <tips></tips>
+        <sign></sign>
+        <links></links>
+        <hot-list></hot-list>
+        <ads></ads>
+      </div>
+    </div>
   </div>
 </template>
 <script>

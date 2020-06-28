@@ -18,4 +18,7 @@ export default {
 @import "assets/layui/css/layui.css";
 @import "assets/css/global.css";
 @import "assets/layui/css/modules/layer/default/layer.css";
+#app{
+  position: relative;
+}
 </style>

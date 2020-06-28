@@ -20,7 +20,7 @@ export default {
   data () {
     return {
       lists: [
-        {
+               {
           name: '提问',
           path: '/index/ask',
           isNew: true

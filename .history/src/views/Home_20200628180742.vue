@@ -1,15 +1,15 @@
 <template>
   <div class="index">
     <router-view></router-view>
-    <panel></panel>
+    <!-- <panel></panel> -->
   </div>
 </template>
 <script>
-import Panel from '../components/Panel'
+// import Panel from '../components/Panel'
 export default {
   name: 'home',
   components: {
-    Panel
+    // Panel
   }
 }
 </script>
