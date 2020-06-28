@@ -14,7 +14,7 @@ const routes = [
   {
     path: '/',
     component: Home,
-    chidren: [
+    children: [
       {
         path: '',
         name: 'index',
@@ -53,6 +53,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  linkExactActiveClass: 'layui-this',
   routes
 })
 

@@ -9,7 +9,7 @@ import Alert from './components/modules/alert/index'
 Vue.use(Alert)
 Vue.config.productionTip = false
 
-axios.defaults.baseURL = (process.env.NODE_EVN !== 'prduction' ? 'http://localhost:3000' : 'http://your.domain.com')
+axios.defaults.baseURL = (process.env.NODE_EVN !== 'prduction' ? 'https://wx.xiuchewuyou.cn/api.php/' : 'http://your.domain.com')
 
 new Vue({
   router,

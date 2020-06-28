@@ -1,17 +1,20 @@
 <template>
   <div class="panel">
     <div class="layui-container">
-      <ul>
-        <li class="layui-hide-xs"><a href="\">首页</a></li>
-        <li><a href="\">提问</a></li>
-        <li><a href="\">分享</a></li>
-        <li><a href="\">讨论</a></li>
-        <li><a href="\">建议</a></li>
-        <li><a href="\">公告</a></li>
-        <li><a href="\">动态</a></li>
-        <li class="layui-hide-xs"><span class="line"></span></li>
-        <li class="layui-hide-xs layui-col-sm"><a href="\">我发表的帖</a></li>
-        <li class="layui-hide-xs layui-col-sm"><a href="\">我收藏的帖</a></li>
+      <ul class="layui-clear">
+        <router-link tag="li" to="/" class="layui-hide-xs">
+          <a href="\">首页</a>
+        </router-link>
+        <router-link v-for="(item,index) in lists" :key="'panel' + index" tag="li" :to="item.path">
+          <a href="\">{{item.name}}</a>
+          <span class="layui-badge-dot" v-if="item.isNew"></span>
+        </router-link>
+        <!-- 用户登录后显示 -->
+        <template v-if="isLogin">
+          <li class="layui-hide-xs"><span class="line"></span></li>
+          <li class="layui-hide-xs layui-col-sm"><a href="\">我发表的帖</a></li>
+          <li class="layui-hide-xs layui-col-sm"><a href="\">我收藏的帖</a></li>
+        </template>
       </ul>
       <div class="right layui-hide-xs">
         <span class="layui-icon layui-icon-search"></span>
@@ -22,7 +25,44 @@
 </template>
 <script>
 export default {
-  name: 'panel'
+  name: 'panel',
+  data () {
+    return {
+      lists: [
+        {
+          name: '提问',
+          path: '/index/ask',
+          isNew: true
+        },
+        {
+          name: '分享',
+          path: '/index/share',
+          isNew: false
+        },
+        {
+          name: '讨论',
+          path: '/index/discuss',
+          isNew: false
+        },
+        {
+          name: '建议',
+          path: '/index/advise',
+          isNew: false
+        },
+        {
+          name: '公告',
+          path: '/index/notice',
+          isNew: false
+        },
+        {
+          name: '动态',
+          path: '/index/logs',
+          isNew: false
+        }
+      ],
+      isLogin: this.$store.state.isLogin
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -45,6 +85,11 @@ export default {
   border-radius: 2px;
   background-color: #fff;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.layui-this{
+  a {
+    color: #5fb878;
+  }
 }
 ul {
   li {

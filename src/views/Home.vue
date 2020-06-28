@@ -1,31 +1,15 @@
 <template>
   <div>
     <panel></panel>
-    <div class="layui-container">
-      <div class="layui-row layui-col-space15">
-        <div class="layui-col-md8">
-          <list></list>
-        </div>
-        <router-view></router-view>
-        <!-- <div class="layui-col-md4">
-          <tips></tips>
-          <sign></sign>
-          <links></links>
-          <hot-list></hot-list>
-          <ads></ads>
-        </div> -->
-      </div>
-    </div>
+    <router-view></router-view>
   </div>
 </template>
 <script>
 import Panel from '../components/Panel'
-import List from '../components/contents/List'
 export default {
   name: 'home',
   components: {
-    Panel,
-    List
+    Panel
   }
 }
 </script>
